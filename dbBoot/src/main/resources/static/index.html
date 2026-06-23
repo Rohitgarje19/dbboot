@@ -1,0 +1,24 @@
+<html>
+    <head>
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+		    data-sap-ui-libs="sap.m, sap.ui.table, sap.ui.layout"
+		    data-sap-ui-theme="sap_horizon"
+		    data-sap-ui-bindingSyntax="complex"
+		    data-sap-ui-resourceroots='{"rohit": "./"}'>
+		</script>
+		<script>
+		    sap.ui.getCore().attachInit(function() {
+		        var oAppView = sap.ui.xmlview({ viewName: "rohit.view.App" });
+		        var oMainView = sap.ui.xmlview({ viewName: "rohit.view.Main" });
+
+		        oAppView.loaded().then(function() {
+		            oAppView.byId("idApp").addPage(oMainView);
+		            oAppView.placeAt("content");
+		        });
+		    });
+		</script>
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+    </body>
+</html>

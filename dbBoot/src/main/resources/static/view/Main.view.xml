@@ -1,0 +1,95 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="rohit.controller.Main" 
+xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Page title="Welcome">
+		<Button text="LoadData" press="onLoadData"></Button>
+		
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Comapany Name" />
+				<Input id="name" value="{/postPayLoad/companyName}" />
+				<Label text="First Name/Last Name" />
+				<Input value="{/postPayLoad/firstName}">
+				</Input>
+				<Input value="{/postPayLoad/lastName}">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				<Label text="Website" />
+				<Input value="{/postPayLoad/website}">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				<Label text="Email" />
+				<Input value="{/postPayLoad/email}" />
+				<Label text="GST_NO" />
+				<Input value="{/postPayLoad/gstNo}"></Input>
+			</f:content>
+		</f:SimpleForm>
+		
+		
+		<t:Table id="idTable" selectionMode="Single">
+		<t:toolbar>
+			<Toolbar>
+				<Button text="Delete" press="onDelete" />
+			</Toolbar>
+		</t:toolbar>
+		 <t:columns>
+		 
+		 	<t:Column>
+		 		<t:label>
+		 			<Text text = "Company Name"/>
+		 		</t:label>
+		 		<t:template>
+		 			<Text text="{companyName}"></Text>
+		 		</t:template>
+			</t:Column>
+			
+			<t:Column>
+		 		<t:label>
+		 		<Text text = "Name"/>
+		 		</t:label>
+		 		<t:template>
+		 			<Text text="{firstName} {lastName}"></Text>
+		 		</t:template>
+			</t:Column>
+			
+			<t:Column>
+		 		<t:label>
+		 		<Text text = "EMail"/>
+		 		</t:label>
+		 		<t:template>
+		 			<Text text="{email}"></Text>
+		 		</t:template>
+			</t:Column>
+			
+			
+			
+		 </t:columns>
+		</t:Table>
+		
+		<footer>
+			<Toolbar>
+				<Button text="Save" press="onSave"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+	
+</mvc:View>
